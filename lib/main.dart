@@ -1,4 +1,7 @@
+
 import 'package:flutter/material.dart';
+import 'package:my_finances_app/ui/home/home_page.dart';
+import 'package:my_finances_app/ui/list/list_finances.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,14 +17,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("My Finances"),
-        ),
-        body: const Center(
-          child: Text("my finances app"),
-        )
-      )
+      home: const HomePage()
     );
   }
 }
+
+
+
