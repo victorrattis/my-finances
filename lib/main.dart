@@ -1,9 +1,20 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:my_finances_app/ui/home/home_page.dart';
-import 'package:my_finances_app/ui/list/list_finances.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  // Android and IOS
+  FirebaseFirestore.instance.settings = const Settings(
+    persistenceEnabled: true,
+    cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
+  );
+  // // Web
+  // FirebaseFirestore.instance.enablePersistence(const PersistenceSettings(synchronizeTabs: true));
+  
   runApp(const MyApp());
 }
 
